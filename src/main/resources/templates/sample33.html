@@ -25,18 +25,22 @@
     <div>あなたはNEKOですね．</div>
   </div>
 
-    <!--
+  <!--
       認証処理を伴う場合はform action=ではなく，thを使ったthymeleafの記述を利用する必要がある(CSRF対応のため)
     -->
-    <form th:action="@{/sample3/step6}" method="post">
-      <input type="number" name="hiku1" />-
-      <input type="number" name="hiku2" />
-      <input type="submit" value="計算"><input type="reset" value="リセット">
-    </form>
-    <div th:if="${hikukekka}">
-      結果：[[${hikukekka}]]
-    </div>
-    
+  <form th:action="@{/sample3/step6}" method="post">
+    <input type="number" name="hiku1" />-
+    <input type="number" name="hiku2" />
+    <input type="submit" value="計算"><input type="reset" value="リセット">
+  </form>
+  <div th:if="${hikukekka}">
+    結果：[[${hikukekka}]]
+  </div>
+
+  <p>
+    <a href=" /sample3/step7">Sample3-7へGETで移動</a>
+  </p>
+
 </body>
 
 </html>

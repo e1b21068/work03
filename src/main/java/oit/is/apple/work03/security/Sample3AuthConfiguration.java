@@ -31,7 +31,7 @@ public class Sample3AuthConfiguration {
   @Bean
   public InMemoryUserDetailsManager userDetailsService() {
     UserDetails yamamoto = User.withUsername("yamamoto")
-        .password(/* "{bcrypt}$2y$10$UhlrsAP5QuA24Qo7up5TrerqIMD6kq/d19HlqIcp.iO03y3DcSa3O" */"{noop}yama").roles("INU")
+        .password("{bcrypt}$2y$10$UhlrsAP5QuA24Qo7up5TrerqIMD6kq/d19HlqIcp.iO03y3DcSa3O").roles("INU")
         .build();
     UserDetails maruyama = User.withUsername("maruyama")
         .password("{bcrypt}$2y$10$g09t.Ca7.OCyfkObwC3/POOrderBHr9kWaJ2J3S09ZTA9ozU25HvO").roles("NEKO").build();
