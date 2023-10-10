@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.springframework.org/schema/security">
+
+<head>
+  <meta charset="utf-8">
+  <title>SpringBoot Sample3-7</title>
+</head>
+
+<body>
+  <div><a href="/logout">ログアウト</a></div>
+
+  <a href="/sample3/step8">入室(DI)</a>
+  <a href="/sample3/step9">入室(new)</a>
+
+  <div th:if="${room}">
+    DI利用
+    <ul>
+      <li>RoomNo:[[${room.roomNo}]]</li>
+      <li th:each="user : ${room.users}">[[${user}]]</li>
+    </ul>
+  </div>
+
+  <div th:if="${new_room}">
+    DIせずnew利用
+    <ul>
+      <li>RoomNo:[[${new_room.roomNo}]]</li>
+      <li th:each="user : ${new_room.users}">[[${user}]]</li>
+    </ul>
+  </div>
+</body>
+
+</html>
