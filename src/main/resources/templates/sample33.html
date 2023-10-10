@@ -16,6 +16,14 @@
   <!--sec:authenticationで認証情報にアクセスできる．principal.authoritiesはロール名を表す-->
   <h3>ロール名：<div sec:authentication="principal.authorities"></div>
   </h3>
+
+  <div sec:authorize="hasRole('ROLE_INU')">
+    <span>あなたはINUですね</span>
+  </div>
+
+  <div sec:authorize="hasRole('ROLE_NEKO')">
+    <div>あなたはNEKOですね．</div>
+  </div>
 </body>
 
 </html>
