@@ -28,7 +28,6 @@ public class Sample3AuthConfiguration {
     return http.build();
   }
 
-  @Bean
   public InMemoryUserDetailsManager userDetailsService() {
     UserDetails yamamoto = User.withUsername("yamamoto")
         .password(/* "{bcrypt}$2y$10$UhlrsAP5QuA24Qo7up5TrerqIMD6kq/d19HlqIcp.iO03y3DcSa3O" */"{noop}yama").roles("INU")
