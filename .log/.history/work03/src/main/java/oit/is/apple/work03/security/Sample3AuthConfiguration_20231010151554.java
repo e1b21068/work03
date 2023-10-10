@@ -16,19 +16,18 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 public class Sample3AuthConfiguration {
   @Bean
-  public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    http.formLogin(login -> login
-        .permitAll())
-        .logout(logout -> logout
-            .logoutUrl("/logout")
-            .logoutSuccessUrl("/"))
-        .authorizeHttpRequests(authz -> authz
-            .requestMatchers(AntPathRequestMatcher.antMatcher("/sample3/**")).authenticated()
-            .requestMatchers(AntPathRequestMatcher.antMatcher("/**")).permitAll());
-    return http.build();
-  }
+  // public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+  //   http.formLogin(login -> login
+  //       .permitAll())
+  //       .logout(logout -> logout
+  //           .logoutUrl("/logout")
+  //           .logoutSuccessUrl("/"))
+  //       .authorizeHttpRequests(authz -> authz
+  //           .requestMatchers(AntPathRequestMatcher.antMatcher("/sample3/**")).authenticated()
+  //           .requestMatchers(AntPathRequestMatcher.antMatcher("/**")).permitAll());
+  //   return http.build();
+  //}
 
-  @Bean
   public InMemoryUserDetailsManager userDetailsService() {
     UserDetails yamamoto = User.withUsername("yamamoto")
         .password(/* "{bcrypt}$2y$10$UhlrsAP5QuA24Qo7up5TrerqIMD6kq/d19HlqIcp.iO03y3DcSa3O" */"{noop}yama").roles("INU")
